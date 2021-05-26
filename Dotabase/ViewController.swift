@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -57,13 +58,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     private func configureConstraints() {
-        NSLayoutConstraint.activate([
-            myTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            myTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            myTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            myTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
-            
-        ])
+        
+        //constraints setup with Snapkit pod
+        myTableView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
 
     }
     //MARK - Public actions

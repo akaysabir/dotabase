@@ -12,6 +12,7 @@
 		0FDF34B5265D0A5900FA6271 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDF34B4265D0A5900FA6271 /* ViewController.swift */; };
 		0FDF34BA265D0A5B00FA6271 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FDF34B9265D0A5B00FA6271 /* Assets.xcassets */; };
 		0FDF34BD265D0A5B00FA6271 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDF34BB265D0A5B00FA6271 /* LaunchScreen.storyboard */; };
+		E35D59DFEBEDDF6552846B69 /* Pods_Dotabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B324C8BE31F3FC0D1FDEDE12 /* Pods_Dotabase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		0FDF34B9265D0A5B00FA6271 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FDF34BC265D0A5B00FA6271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FDF34BE265D0A5B00FA6271 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE05DA2CC7C465DA8231DFA4 /* Pods-Dotabase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dotabase.debug.xcconfig"; path = "Target Support Files/Pods-Dotabase/Pods-Dotabase.debug.xcconfig"; sourceTree = "<group>"; };
+		B324C8BE31F3FC0D1FDEDE12 /* Pods_Dotabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dotabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE75C48A0ACCAEB85053EEEA /* Pods-Dotabase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dotabase.release.xcconfig"; path = "Target Support Files/Pods-Dotabase/Pods-Dotabase.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E35D59DFEBEDDF6552846B69 /* Pods_Dotabase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				0FDF34AF265D0A5900FA6271 /* Dotabase */,
 				0FDF34AE265D0A5900FA6271 /* Products */,
+				1A4C9450AE0152FE09C33330 /* Pods */,
+				67D29486EFBA50E74C97DBFE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,24 @@
 			path = Dotabase;
 			sourceTree = "<group>";
 		};
+		1A4C9450AE0152FE09C33330 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE05DA2CC7C465DA8231DFA4 /* Pods-Dotabase.debug.xcconfig */,
+				FE75C48A0ACCAEB85053EEEA /* Pods-Dotabase.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		67D29486EFBA50E74C97DBFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B324C8BE31F3FC0D1FDEDE12 /* Pods_Dotabase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0FDF34C1265D0A5B00FA6271 /* Build configuration list for PBXNativeTarget "Dotabase" */;
 			buildPhases = (
+				3F07BB800651BCFE692073E2 /* [CP] Check Pods Manifest.lock */,
 				0FDF34A9265D0A5900FA6271 /* Sources */,
 				0FDF34AA265D0A5900FA6271 /* Frameworks */,
 				0FDF34AB265D0A5900FA6271 /* Resources */,
+				92A1A3764B8AA0C363E46509 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,6 +154,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F07BB800651BCFE692073E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dotabase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92A1A3764B8AA0C363E46509 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dotabase/Pods-Dotabase-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dotabase/Pods-Dotabase-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dotabase/Pods-Dotabase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0FDF34A9265D0A5900FA6271 /* Sources */ = {
@@ -271,6 +340,7 @@
 		};
 		0FDF34C2265D0A5B00FA6271 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE05DA2CC7C465DA8231DFA4 /* Pods-Dotabase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -290,6 +360,7 @@
 		};
 		0FDF34C3265D0A5B00FA6271 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE75C48A0ACCAEB85053EEEA /* Pods-Dotabase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
