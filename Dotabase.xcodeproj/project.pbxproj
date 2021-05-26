@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F5BC66B265D2B59008B7E70 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5BC66A265D2B59008B7E70 /* CustomTableViewCell.swift */; };
 		0FDF34B1265D0A5900FA6271 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDF34B0265D0A5900FA6271 /* AppDelegate.swift */; };
 		0FDF34B5265D0A5900FA6271 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDF34B4265D0A5900FA6271 /* ViewController.swift */; };
 		0FDF34BA265D0A5B00FA6271 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FDF34B9265D0A5B00FA6271 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F5BC66A265D2B59008B7E70 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		0FDF34AD265D0A5900FA6271 /* Dotabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dotabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FDF34B0265D0A5900FA6271 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FDF34B4265D0A5900FA6271 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			children = (
 				0FDF34B0265D0A5900FA6271 /* AppDelegate.swift */,
 				0FDF34B4265D0A5900FA6271 /* ViewController.swift */,
+				0F5BC66A265D2B59008B7E70 /* CustomTableViewCell.swift */,
 				0FDF34B9265D0A5B00FA6271 /* Assets.xcassets */,
 				0FDF34BB265D0A5B00FA6271 /* LaunchScreen.storyboard */,
 				0FDF34BE265D0A5B00FA6271 /* Info.plist */,
@@ -130,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F5BC66B265D2B59008B7E70 /* CustomTableViewCell.swift in Sources */,
 				0FDF34B5265D0A5900FA6271 /* ViewController.swift in Sources */,
 				0FDF34B1265D0A5900FA6271 /* AppDelegate.swift in Sources */,
 			);
