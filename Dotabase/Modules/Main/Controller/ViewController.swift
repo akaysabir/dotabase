@@ -8,21 +8,19 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
     
-    
-
     //MARK - Public properties
+    
+    var service: DotaServiceProtocol?
     
     //MARK - Private properties
     
-    let data = [
-        "Foo",
-        "Bar",
-        "Baz",
-        "Kek",
-        "Cheburek"
-    ]
+    var data = ["Tap me"] {
+        didSet {
+            myTableView.reloadData()
+        }
+    }
     
     private lazy var myTableView: UITableView = {
         let view = UITableView()
@@ -69,6 +67,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //MARK -  Private actions
     
+    
+    private func getHeroes() {
+        service?.getHeroes({ [weak self] (heroes) in
+            self?.data = heroes.compactMap{ $0.localized_name }
+        })
+    }
+
+}
+
+extension ViewController: UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -85,5 +94,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
+}
 
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let vc = MainViewController()
+//        navigationController?.pushViewController(vc, animated: true)
+        getHeroes()
+    }
+    
 }

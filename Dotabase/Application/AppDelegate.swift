@@ -17,8 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
         let vc = ViewController()
-        
-        window?.rootViewController = vc
+        vc.service = DotaService()
+        let navVc = UINavigationController(rootViewController: vc)
+        window?.rootViewController = navVc
         window?.makeKeyAndVisible()
         
         return true
