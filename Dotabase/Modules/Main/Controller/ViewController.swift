@@ -16,11 +16,34 @@ class ViewController: UIViewController {
     
     //MARK - Private properties
     
-    var data = ["Tap me"] {
+    private var data = ["Tap me"] {
         didSet {
             myTableView.reloadData()
         }
     }
+    
+    private lazy var myLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = #colorLiteral(red: 0.9333333333, green: 0.9215686275, blue: 0.8666666667, alpha: 1)
+        label.font = UIFont(name: "Trajan Pro", size: 34)
+        label.text = "HEROES"
+        label.textAlignment = .left
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var mySearchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.searchBarStyle = UISearchBar.Style.default
+        searchBar.placeholder = " Search..."
+        searchBar.sizeToFit()
+        searchBar.isTranslucent = false
+        searchBar.barTintColor = #colorLiteral(red: 0.1058823529, green: 0.09019607843, blue: 0.09019607843, alpha: 1)
+        searchBar.layer.borderWidth = 0
+        searchBar.delegate = self
+//        navigationItem.titleView = searchBar
+        return searchBar
+    }()
     
     private lazy var myTableView: UITableView = {
         let view = UITableView()
@@ -34,6 +57,7 @@ class ViewController: UIViewController {
         return view
     }()
     
+    
     //MARK - Lifecycle
     
     override func viewDidLoad() {
@@ -44,13 +68,13 @@ class ViewController: UIViewController {
     //MARK - Setup
     
     private func setup() {
-        view.backgroundColor = .white
+        view.backgroundColor = #colorLiteral(red: 0.1058823529, green: 0.09019607843, blue: 0.09019607843, alpha: 1)
         configureSubviews()
         configureConstraints()
     }
     
     private func configureSubviews() {
-        [myTableView].forEach {
+        [myTableView, myLabel, mySearchBar].forEach {
             view.addSubview($0)
         }
     }
@@ -58,10 +82,20 @@ class ViewController: UIViewController {
     private func configureConstraints() {
         
         //constraints setup with Snapkit pod
-        myTableView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+        myLabel.snp.makeConstraints {
+            $0.trailing.leading.equalToSuperview()
+            $0.top.equalToSuperview().inset(40)
         }
-
+        
+        mySearchBar.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.top.equalTo(myLabel.snp.bottom).inset(-20)
+        }
+        
+        myTableView.snp.makeConstraints {
+            $0.leading.trailing.bottom.equalToSuperview()
+            $0.top.equalTo(mySearchBar.snp.bottom).inset(-20)
+        }
     }
     //MARK - Public actions
     
@@ -75,6 +109,8 @@ class ViewController: UIViewController {
     }
 
 }
+
+//MARK - Extensions
 
 extension ViewController: UITableViewDataSource {
     
@@ -98,9 +134,12 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let vc = MainViewController()
-//        navigationController?.pushViewController(vc, animated: true)
         getHeroes()
     }
-    
+}
+
+extension ViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+    }
 }

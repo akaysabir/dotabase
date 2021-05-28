@@ -16,8 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         window = UIWindow()
-        let vc = ViewController()
-        vc.service = DotaService()
+        let vc = MainViewController()
         let navVc = UINavigationController(rootViewController: vc)
         window?.rootViewController = navVc
         window?.makeKeyAndVisible()

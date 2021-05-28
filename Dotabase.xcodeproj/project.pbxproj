@@ -11,6 +11,8 @@
 		0F0CCAFB265E619B00B9110B /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0CCAFA265E619B00B9110B /* Hero.swift */; };
 		0F0CCAFE265E65D400B9110B /* DotaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0CCAFD265E65D400B9110B /* DotaService.swift */; };
 		0F0CCB02265F954B00B9110B /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0CCB01265F954B00B9110B /* BaseService.swift */; };
+		0F0CCB0A265FA1C400B9110B /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0CCB09265FA1C400B9110B /* CustomCollectionViewCell.swift */; };
+		0F0CCB10265FBC7D00B9110B /* Trajan Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F0CCB0F265FBC7C00B9110B /* Trajan Pro.ttf */; };
 		0F5BC66B265D2B59008B7E70 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5BC66A265D2B59008B7E70 /* CustomTableViewCell.swift */; };
 		0F5BC678265E5BBB008B7E70 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5BC677265E5BBB008B7E70 /* MainViewController.swift */; };
 		0FDF34B1265D0A5900FA6271 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDF34B0265D0A5900FA6271 /* AppDelegate.swift */; };
@@ -25,6 +27,8 @@
 		0F0CCAFA265E619B00B9110B /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		0F0CCAFD265E65D400B9110B /* DotaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotaService.swift; sourceTree = "<group>"; };
 		0F0CCB01265F954B00B9110B /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		0F0CCB09265FA1C400B9110B /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		0F0CCB0F265FBC7C00B9110B /* Trajan Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trajan Pro.ttf"; sourceTree = "<group>"; };
 		0F5BC66A265D2B59008B7E70 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		0F5BC677265E5BBB008B7E70 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0FDF34AD265D0A5900FA6271 /* Dotabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dotabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +96,22 @@
 			path = BaseService;
 			sourceTree = "<group>";
 		};
+		0F0CCB0D265FBC5B00B9110B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0F0CCB0E265FBC5F00B9110B /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0F0CCB0E265FBC5F00B9110B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0F0CCB0F265FBC7C00B9110B /* Trajan Pro.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		0F5BC671265E5960008B7E70 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,8 +132,8 @@
 		0F5BC674265E59CD008B7E70 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0FDF34B4265D0A5900FA6271 /* ViewController.swift */,
 				0F5BC677265E5BBB008B7E70 /* MainViewController.swift */,
+				0FDF34B4265D0A5900FA6271 /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -122,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				0F5BC66A265D2B59008B7E70 /* CustomTableViewCell.swift */,
+				0F0CCB09265FA1C400B9110B /* CustomCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,6 +180,7 @@
 				0F0CCAF2265E612300B9110B /* Networking */,
 				0F5BC671265E5960008B7E70 /* Modules */,
 				0F0CCAF9265E618A00B9110B /* Entities */,
+				0F0CCB0D265FBC5B00B9110B /* Resources */,
 				0FDF34B9265D0A5B00FA6271 /* Assets.xcassets */,
 				0FDF34BB265D0A5B00FA6271 /* LaunchScreen.storyboard */,
 				0FDF34BE265D0A5B00FA6271 /* Info.plist */,
@@ -242,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F0CCB10265FBC7D00B9110B /* Trajan Pro.ttf in Resources */,
 				0FDF34BD265D0A5B00FA6271 /* LaunchScreen.storyboard in Resources */,
 				0FDF34BA265D0A5B00FA6271 /* Assets.xcassets in Resources */,
 			);
@@ -297,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F0CCB02265F954B00B9110B /* BaseService.swift in Sources */,
+				0F0CCB0A265FA1C400B9110B /* CustomCollectionViewCell.swift in Sources */,
 				0F5BC66B265D2B59008B7E70 /* CustomTableViewCell.swift in Sources */,
 				0F0CCAF6265E616100B9110B /* DotaServiceProtocol.swift in Sources */,
 				0FDF34B5265D0A5900FA6271 /* ViewController.swift in Sources */,

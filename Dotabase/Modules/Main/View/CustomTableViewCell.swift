@@ -11,14 +11,12 @@ class CustomTableViewCell: UITableViewCell {
     
     lazy var myLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .green
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     lazy var myImage: UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = . blue
         view.contentMode = .scaleAspectFill
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
