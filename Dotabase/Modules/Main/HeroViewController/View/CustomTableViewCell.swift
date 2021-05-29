@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import SnapKit
 
 class CustomTableViewCell: UITableViewCell {
     
     lazy var myLabel: UILabel = {
         let label = UILabel()
+        label.textColor = #colorLiteral(red: 0.9333333333, green: 0.9215686275, blue: 0.8666666667, alpha: 1)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -18,6 +20,8 @@ class CustomTableViewCell: UITableViewCell {
     lazy var myImage: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
+        view.layer.masksToBounds = true
+        view.layer.cornerRadius = 10
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -29,17 +33,17 @@ class CustomTableViewCell: UITableViewCell {
             addSubview($0)
         }
         
-        NSLayoutConstraint.activate([
-            myImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            myImage.widthAnchor.constraint(equalToConstant: 100),
-            myImage.topAnchor.constraint(equalTo: topAnchor),
-            myImage.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
-            myLabel.leadingAnchor.constraint(equalTo: myImage.trailingAnchor, constant: 10),
-            myLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            myLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
-            myLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
-        ])
+        myImage.snp.makeConstraints {
+            $0.leading.top.bottom.equalToSuperview()
+            $0.width.equalTo(myImage.snp.height)
+            $0.width.equalTo(70)
+        }
+        
+        myLabel.snp.makeConstraints {
+            $0.top.bottom.trailing.equalToSuperview()
+            $0.leading.equalTo(myImage.snp.trailing).inset(-20)
+        }
+
         
     }
     

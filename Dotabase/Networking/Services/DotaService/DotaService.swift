@@ -12,8 +12,5 @@ final class DotaService: BaseService, DotaServiceProtocol {
     func getHeroes(_ completion: @escaping ([Hero]) -> Void) {
         let urlString = "https://api.opendota.com/api/heroes"
         makeRequest(urlString: urlString, completion: completion)
-    }
-    
-    
-    
+    } 
 }

@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-final class MainViewController: UIViewController {
+final class MainViewController: BaseViewController {
     
     // MARK: - Public properties
     
@@ -38,7 +38,7 @@ final class MainViewController: UIViewController {
     private lazy var myCollectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize()
-        flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        flowLayout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         flowLayout.minimumInteritemSpacing = 10
         flowLayout.minimumLineSpacing = 10
         flowLayout.itemSize = CGSize(width: view.frame.width*0.4, height: view.frame.height*0.3)
@@ -49,7 +49,7 @@ final class MainViewController: UIViewController {
         view.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: "collectionCell")
         view.backgroundColor = #colorLiteral(red: 0.1058823529, green: 0.09019607843, blue: 0.09019607843, alpha: 1)
         view.alwaysBounceVertical = true
-        view.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+//        view.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -99,7 +99,7 @@ final class MainViewController: UIViewController {
 
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = ViewController()
+        let vc = HeroViewController()
         vc.service = DotaService()
         navigationController?.pushViewController(vc, animated: true)
     }
