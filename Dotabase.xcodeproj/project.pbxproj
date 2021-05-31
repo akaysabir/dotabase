@@ -26,6 +26,8 @@
 		0F0CCB3C2660F13700B9110B /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0CCB382660F13700B9110B /* ActivityView.swift */; };
 		0F0CCB3D2660F13700B9110B /* TableViewIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0CCB392660F13700B9110B /* TableViewIndicatorView.swift */; };
 		0F0CCB3E2660F13700B9110B /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0CCB3A2660F13700B9110B /* SpinnerView.swift */; };
+		0F0CCB4C2663865000B9110B /* HeroDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0CCB4B2663865000B9110B /* HeroDetailsViewController.swift */; };
+		0F29A3002664285A00BD8F6F /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F29A2FF2664285A00BD8F6F /* UITableViewExtension.swift */; };
 		0F5BC66B265D2B59008B7E70 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5BC66A265D2B59008B7E70 /* CustomTableViewCell.swift */; };
 		0F5BC678265E5BBB008B7E70 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5BC677265E5BBB008B7E70 /* MainViewController.swift */; };
 		0FDF34B1265D0A5900FA6271 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDF34B0265D0A5900FA6271 /* AppDelegate.swift */; };
@@ -55,6 +57,8 @@
 		0F0CCB382660F13700B9110B /* ActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		0F0CCB392660F13700B9110B /* TableViewIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewIndicatorView.swift; sourceTree = "<group>"; };
 		0F0CCB3A2660F13700B9110B /* SpinnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
+		0F0CCB4B2663865000B9110B /* HeroDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailsViewController.swift; sourceTree = "<group>"; };
+		0F29A2FF2664285A00BD8F6F /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		0F5BC66A265D2B59008B7E70 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		0F5BC677265E5BBB008B7E70 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0FDF34AD265D0A5900FA6271 /* Dotabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dotabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,6 +258,54 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		0F0CCB472663860900B9110B /* HeroDetails */ = {
+			isa = PBXGroup;
+			children = (
+				0F0CCB492663862000B9110B /* View */,
+				0F0CCB482663861A00B9110B /* Controller */,
+			);
+			path = HeroDetails;
+			sourceTree = "<group>";
+		};
+		0F0CCB482663861A00B9110B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0F0CCB4B2663865000B9110B /* HeroDetailsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0F0CCB492663862000B9110B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0F29A2FC2664284000BD8F6F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0F29A2FD2664284800BD8F6F /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0F29A2FD2664284800BD8F6F /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				0F29A2FE2664284C00BD8F6F /* UITableView */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		0F29A2FE2664284C00BD8F6F /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				0F29A2FF2664285A00BD8F6F /* UITableViewExtension.swift */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
 		0F5BC671265E5960008B7E70 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,7 +319,6 @@
 			children = (
 				0F5BC675265E59CF008B7E70 /* View */,
 				0F5BC674265E59CD008B7E70 /* Controller */,
-				0F0CCB40266100EB00B9110B /* HeroViewController */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -320,8 +371,11 @@
 				0F5BC676265E5A01008B7E70 /* Application */,
 				0F0CCB132660E97C00B9110B /* Common */,
 				0F0CCB1A2660EAA500B9110B /* CustomViews */,
+				0F29A2FC2664284000BD8F6F /* Extensions */,
 				0F0CCAF9265E618A00B9110B /* Entities */,
 				0F5BC671265E5960008B7E70 /* Modules */,
+				0F0CCB40266100EB00B9110B /* HeroViewController */,
+				0F0CCB472663860900B9110B /* HeroDetails */,
 				0F0CCAF2265E612300B9110B /* Networking */,
 				0F0CCB0D265FBC5B00B9110B /* Resources */,
 				0FDF34B9265D0A5B00FA6271 /* Assets.xcassets */,
@@ -465,6 +519,7 @@
 				0F0CCB342660F01F00B9110B /* IndicatableView+UIViewController.swift in Sources */,
 				0F0CCB3B2660F13700B9110B /* SpinnerIndicator.swift in Sources */,
 				0F0CCB02265F954B00B9110B /* BaseService.swift in Sources */,
+				0F29A3002664285A00BD8F6F /* UITableViewExtension.swift in Sources */,
 				0F0CCB0A265FA1C400B9110B /* CustomCollectionViewCell.swift in Sources */,
 				0F0CCB252660EE4500B9110B /* HideableSearchBar.swift in Sources */,
 				0F5BC66B265D2B59008B7E70 /* CustomTableViewCell.swift in Sources */,
@@ -477,6 +532,7 @@
 				0F5BC678265E5BBB008B7E70 /* MainViewController.swift in Sources */,
 				0F0CCB3C2660F13700B9110B /* ActivityView.swift in Sources */,
 				0F0CCB322660F01F00B9110B /* IndicatableView.swift in Sources */,
+				0F0CCB4C2663865000B9110B /* HeroDetailsViewController.swift in Sources */,
 				0F0CCAFB265E619B00B9110B /* Hero.swift in Sources */,
 				0F0CCB332660F01F00B9110B /* IndicatableView+UITableView.swift in Sources */,
 				0F0CCB312660F01F00B9110B /* IndicatableView+UIView.swift in Sources */,

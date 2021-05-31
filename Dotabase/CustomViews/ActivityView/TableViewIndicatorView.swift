@@ -14,6 +14,7 @@ final class TableViewIndicatorView: UIView {
     private lazy var indicatorView: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .medium)
         view.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        view.color = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -21,7 +22,7 @@ final class TableViewIndicatorView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         clipsToBounds = true
-        backgroundColor = .white
+        backgroundColor = .clear
         addSubview(indicatorView)
         indicatorView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(16)
