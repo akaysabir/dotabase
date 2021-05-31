@@ -131,16 +131,16 @@ class HeroViewController: BaseViewController, KeyboardHandling {
         service?.getHeroes({ [weak self] (heroes) in
             self?.myTableView.hideActivityIndicator()
             self?.refreshControl.endRefreshing()
-            self?.data = heroes
+            self?.data = heroes.map { $0.value }
 //                .compactMap{ $0.localized_name }
         })
         service?.getHeroLore({ [weak self] (lore) in
             self?.heroLore = lore
+            self?.heroLore["dawnbreaker"] = Dawnbreaker.lore
         })
     }
     
     
-
 }
 
 //MARK - Extensions
@@ -160,8 +160,21 @@ extension HeroViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
         
         cell.myLabel.text = filteredData[indexPath.row].localized_name
-        let url = URL(string: "\(filteredData[indexPath.row].image_url ?? "")")
-        cell.myImage.kf.setImage(with: url)
+        
+        
+        if cell.myLabel.text == "Dawnbreaker" {
+            let url = URL(string: Dawnbreaker.img)
+            cell.myImage.kf.setImage(with: url,
+                                     placeholder: nil,
+                                     options: [.transition(.fade(0.5))])
+        } else {
+            let url = URL(string: "https://api.opendota.com" + "\(filteredData[indexPath.row].img ?? "")")
+            cell.myImage.kf.indicatorType = .activity
+            cell.myImage.kf.setImage(with: url,
+                                     placeholder: nil,
+                                     options: [.transition(.fade(0.5))])
+        }
+        
         cell.backgroundColor = #colorLiteral(red: 0.1058823529, green: 0.09019607843, blue: 0.09019607843, alpha: 1)
         
         return cell
@@ -173,8 +186,8 @@ extension HeroViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = HeroDetailsViewController()
         vc.hero = filteredData[indexPath.row]
-        if let heroName = filteredData[indexPath.row].name,
-              let lore = heroLore[heroName] {
+        if let heroName = filteredData[indexPath.row].name?.replacingOccurrences(of: "npc_dota_hero_", with: ""),
+           let lore = heroLore[heroName] {
             vc.lore = lore
         }
         navigationController?.pushViewController(vc, animated: true)

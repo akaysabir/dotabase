@@ -9,10 +9,9 @@ import Foundation
 
 final class DotaService: BaseService, DotaServiceProtocol {
     
-    func getHeroes(_ completion: @escaping ([Hero]) -> Void) {
-        let key = "uAIeqlx-sydgxtqsmWmE0bGilM3vE5P88P6zDv25Ei06F1dZyU8"
-        let urlString = "https://api.pandascore.co/dota2/heroes?per_page=101&sort=localized_name&token="
-        makeRequest(urlString: urlString+key, completion: completion)
+    func getHeroes(_ completion: @escaping ([String: Hero]) -> Void) {
+        let urlString = "https://api.opendota.com/api/constants/heroes"
+        makeRequest(urlString: urlString, completion: completion)
     }
     
     func getHeroLore(_ completion: @escaping ([String: String]) -> Void) {

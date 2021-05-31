@@ -6,6 +6,6 @@
 //
 
 protocol DotaServiceProtocol {
-    func getHeroes(_ completion: @escaping ([Hero]) -> Void)
+    func getHeroes(_ completion: @escaping ([String: Hero]) -> Void)
     func getHeroLore(_ completion: @escaping (([String: String]) -> Void))
 }

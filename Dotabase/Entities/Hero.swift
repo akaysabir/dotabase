@@ -11,5 +11,5 @@ struct Hero: Codable {
     var id: Int?
     var name: String?
     var localized_name: String?
-    var image_url: String?
+    var img: String?
 }

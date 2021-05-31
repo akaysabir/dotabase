@@ -32,8 +32,18 @@ class HeroDetailsViewController: UIViewController {
         view.layer.masksToBounds = true
         view.layer.cornerRadius = 30
         view.translatesAutoresizingMaskIntoConstraints = false
-        let url = URL(string: "\(hero.image_url ?? "")")
-        view.kf.setImage(with: url)
+        if hero.localized_name == "Dawnbreaker" {
+            let url = URL(string: Dawnbreaker.img)
+            view.kf.setImage(with: url,
+                                     placeholder: nil,
+                                     options: [.transition(.fade(0.5))])
+        } else {
+            let url = URL(string: "https://api.opendota.com" + "\(hero.img ?? "")")
+            view.kf.indicatorType = .activity
+            view.kf.setImage(with: url,
+                                     placeholder: nil,
+                                     options: [.transition(.fade(0.5))])
+        }
         return view
     }()
     
