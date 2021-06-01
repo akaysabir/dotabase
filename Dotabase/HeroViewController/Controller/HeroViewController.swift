@@ -132,12 +132,16 @@ class HeroViewController: BaseViewController, KeyboardHandling {
             self?.myTableView.hideActivityIndicator()
             self?.refreshControl.endRefreshing()
             self?.data = heroes.map { $0.value }
+            self?.data.sort(by: { (lhs, rhs) -> Bool in
+                return lhs.localized_name ?? "" < rhs.localized_name ?? ""
+            })
 //                .compactMap{ $0.localized_name }
         })
         service?.getHeroLore({ [weak self] (lore) in
             self?.heroLore = lore
             self?.heroLore["dawnbreaker"] = Dawnbreaker.lore
         })
+        
     }
     
     
