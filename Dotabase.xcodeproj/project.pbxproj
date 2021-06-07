@@ -313,6 +313,8 @@
 			isa = PBXGroup;
 			children = (
 				0F5BC673265E59C2008B7E70 /* Main */,
+				0F0CCB40266100EB00B9110B /* HeroViewController */,
+				0F0CCB472663860900B9110B /* HeroDetails */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -377,8 +379,6 @@
 				0F29A2FC2664284000BD8F6F /* Extensions */,
 				0F0CCAF9265E618A00B9110B /* Entities */,
 				0F5BC671265E5960008B7E70 /* Modules */,
-				0F0CCB40266100EB00B9110B /* HeroViewController */,
-				0F0CCB472663860900B9110B /* HeroDetails */,
 				0F0CCAF2265E612300B9110B /* Networking */,
 				0F0CCB0D265FBC5B00B9110B /* Resources */,
 				0FDF34B9265D0A5B00FA6271 /* Assets.xcassets */,
